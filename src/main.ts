@@ -23,7 +23,8 @@ function getActionInput(): Input {
     deleteUntaggedVersions: getInput(
       'delete-only-untagged-versions'
     ).toLowerCase(),
-    dryRun: getBooleanInput('dry-run')
+    dryRun: getBooleanInput('dry-run'),
+    includeTags: getInput('ignore-versions-include-tags').toLowerCase()
   })
 }
 
