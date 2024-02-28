@@ -66,6 +66,10 @@ This action deletes versions of a package from [GitHub Packages](https://github.
   # Cannot be used with `num-old-versions-to-delete`.
   delete-only-untagged-versions:
 
+  # If true, action deletes nothing and only logs the versions that would be deleted.
+  # Defaults to false.
+  dry-run:
+
   # If true it will also ignore tags matching the regex provided in `ignore-versions`
   # Defaults to false.
   # Can only be used with `ignore-versions`.
