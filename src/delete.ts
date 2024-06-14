@@ -20,6 +20,8 @@ export function getVersionIds(
   page: number,
   token: string
 ): Observable<RestVersionInfo[]> {
+  console.log('calling getOldestVersions with:')
+  console.log({ owner, packageName, packageType, numVersions, page })
   return getOldestVersions(
     owner,
     packageName,

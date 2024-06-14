@@ -56,6 +56,8 @@ export function getOldestVersions(
       )
     }),
     map(response => {
+      console.log('get package versions for user API resp:')
+      console.log({ response })
       const resp = {
         versions: response.data.map((version: GetVersionsResponse[0]) => {
           let tags: string[] = []
