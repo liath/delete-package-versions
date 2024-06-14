@@ -70,7 +70,10 @@ export function finalIds(input: Input): Observable<string[]> {
             new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
           )
         })
-        /* 
+
+        console.log('candidates:')
+        console.log(JSON.stringify(value))
+        /*
           Here first filter out the versions that are to be ignored.
           Then compute number of versions to delete (toDelete) based on the inputs.
           */
@@ -99,6 +102,8 @@ export function finalIds(input: Input): Observable<string[]> {
             RATE_LIMIT
           )
         }
+        console.log('after filtering')
+        console.log(JSON.stringify(value))
         if (toDelete < 0) return []
         return value.map(info => info.id.toString()).slice(0, toDelete)
       })
